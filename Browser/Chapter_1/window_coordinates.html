@@ -2,44 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DOMRect</title>
+    <title>Coordinates</title>
   <style>
-    .box {
-      width: 100px;
-      height: 100px;
+    body {
+        background-color: black;
+        color: whitesmoke;
+        /*overflow: hidden;*/
+      }
+    div {
+      width: 250px;
+      height: 250px;
       background-color: lightsalmon;
-      margin-top: 20px;
+      margin-bottom: 4px;
       padding: 0;
     }
-    .box.special {
+    .special {
       background: rebeccapurple;
     }
   </style>
 </head>
 <body>
-<div class="box">1</div>
-<div class="box">2</div>
-<div class="box">3</div>
-<div class="box">4</div>
-<div class="box">5</div>
-<div class="box">6</div>
-<div class="box special">7</div>
-<div class="box">8</div>
-<div class="box">9</div>
-<div class="box">10</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div class="special">8</div>
+    <div>9</div>
+    <div>10</div>
 
   <script>
+      const special = document.querySelector('.special');
 
-    function printMousePos(event) {
-      document.body.textContent =
-              'clientX: ' + event.clientX +
-              'clientY: ' + event.clientY +
-              'pageX: ' + event.pageX +
-              'pageY: ' + event.pageY;
-    }
-    document.addEventListener('click', printMousePos);
+      special.addEventListener('click', (event) => {
+          const rect = special.getBoundingClientRect();
+          console.log(rect);
+          console.log(`client: ${event.clientX}, ${event.clientY}`);
+          console.log(`page: ${event.pageX}, ${event.pageY}`);
+      });
 
-    console.log(printMousePos);
+    // function printMousePos(event) {
+    //   document.body.textContent =
+    //           'clientX: ' + event.clientX +
+    //           'clientY: ' + event.clientY +
+    //           'pageX: ' + event.pageX +
+    //           'pageY: ' + event.pageY;
+    // }
+    // document.addEventListener('click', printMousePos);
+    //
+    // console.log(printMousePos);
   </script>
 </body>
 </html>
