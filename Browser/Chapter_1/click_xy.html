@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMRect</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: lightsalmon;
+      margin-top: 20px;
+      padding: 0;
+    }
+    .box.special {
+      background: rebeccapurple;
+    }
+  </style>
+</head>
+<body>
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+<div class="box">6</div>
+<div class="box special">7</div>
+<div class="box">8</div>
+<div class="box">9</div>
+<div class="box">10</div>
+
+  <script>
+
+    function printMousePos(event) {
+      document.body.textContent =
+              'clientX: ' + event.clientX +
+              'clientY: ' + event.clientY +
+              'pageX: ' + event.pageX +
+              'pageY: ' + event.pageY;
+    }
+    document.addEventListener('click', printMousePos);
+  </script>
+</body>
+</html>
