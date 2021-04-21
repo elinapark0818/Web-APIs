@@ -20,15 +20,18 @@
 <div class="tag">Window Size</div>
 <script>
     const tag = document.querySelector('.tag');
-    window.addEventListener('resize', () => {
+    function updateTag() {
         tag.innerHTML = `
         window.screen: ${window.screen.width}, ${window.screen.height} <br/>
         window.outer: ${window.outerWidth}, ${window.outerHeight} <br/>
         window.inner: ${window.innerWidth}, ${window.innerHeight} <br/>
         documentElement.clientSize: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
         `;
+    }
+    window.addEventListener('resize', () => {
+        updateTag();
     });
-
+    updateTag();
 </script>
 </body>
 </html>
