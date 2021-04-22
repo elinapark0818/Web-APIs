@@ -19,3 +19,5 @@ function solution(answers) {
 
     return answer;
 }
+
+solution();
