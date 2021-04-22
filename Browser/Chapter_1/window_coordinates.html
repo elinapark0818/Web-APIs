@@ -19,6 +19,12 @@
     .special {
       background: rebeccapurple;
     }
+    aside {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 16px;
+    }
   </style>
 </head>
 <body>
@@ -33,6 +39,12 @@
     <div>9</div>
     <div>10</div>
 
+    <aside>
+    <button class="scroll-by">Scroll by 100px(y)</button>
+    <button class="scroll-to">Scroll to 100px(y)</button>
+    <button class="scroll-into">Scroll into special</button>
+    </aside>
+
   <script>
       const special = document.querySelector('.special');
 
@@ -43,16 +55,19 @@
           console.log(`page: ${event.pageX}, ${event.pageY}`);
       });
 
-    // function printMousePos(event) {
-    //   document.body.textContent =
-    //           'clientX: ' + event.clientX +
-    //           'clientY: ' + event.clientY +
-    //           'pageX: ' + event.pageX +
-    //           'pageY: ' + event.pageY;
-    // }
-    // document.addEventListener('click', printMousePos);
-    //
-    // console.log(printMousePos);
+      const scrollBy = document.querySelector('.scroll-by');
+      const scrollTo = document.querySelector('.scroll-to');
+      const scrollInto = document.querySelector('.scroll-into');
+
+      scrollBy.addEventListener('click', () => {
+          window.scrollBy({top:100, left:0, behavior:'smooth'});
+      });
+      scrollTo.addEventListener('click', () => {
+          window.scrollTo(0, 100);
+      });
+      scrollInto.addEventListener('click', () => {
+          special.scrollIntoView();
+      });
   </script>
 </body>
 </html>
