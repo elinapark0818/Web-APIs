@@ -25,6 +25,13 @@
         z-index: 100;
         will-change: opacity;
       }
+
+      .logo {
+        font-size: 50px;
+        width: 50px;
+        height: 50px;
+      }
+
       h1,
       h3,
       span {
@@ -34,10 +41,25 @@
   </head>
   <body>
     <section>
+      <img class="logo" src="img/Elina_logo(pink).png" alt="Elina_Logo">
       <img src="img/avatar.png" alt="avatar" />
       <h1 id="brand">Dream Coding</h1>
       <h3>Don't forget to code your dream</h3>
     </section>
     <span>Hello World!</span>
+
+
+    <script>
+      const image = document.querySelector('img[src="img/avatar.png"]');
+      console.log(image);
+
+      const section = document.querySelector('section');
+      const h2 = document.createElement('h2'); // <h2></h2>
+      h2.setAttribute('id', 'test_h2'); // <h2 id="test_h2"></h2>
+      h2.textContent = 'This is a test_h2'; // <h2 id="test_h2">This is a test_h2</h2>
+      // section.appendChild(h2); // 맨 끝에 추가가 된다
+      const h3 = document.querySelector('h3');
+      section.insertBefore(h2, h3); // h3전에 h2를 삽입한다
+    </script>
   </body>
 </html>
