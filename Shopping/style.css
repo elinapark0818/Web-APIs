@@ -1,0 +1,47 @@
+:root {
+    /*Color*/
+    --color-white: #ffffff;
+    --color-grey: #616161;
+    --color-black: #000000;
+
+    /*Font size*/
+    --font-medium: 28px;
+    --font-regular: 18px;
+
+    /*Size*/
+    --size-border-radius: 5px;
+
+    /*Animation*/
+    --animation-duration: 300ms;
+}
+
+body {
+    background-color: var(--color-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.app {
+    background-color: var(--color-white);
+    border-radius: var(--size-border-radius);
+    width: 300px;
+    height: 500px;
+}
+
+.header {
+    font-size: var(--font-medium);
+    color: var(--color-white);
+}
+
+header,
+footer {
+    background: url("img/home_background.png") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trash {
+    visibility: hidden;
+}
