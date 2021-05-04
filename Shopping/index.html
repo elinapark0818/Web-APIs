@@ -1,33 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="KO">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopping List</title>
-    <link rel="stylesheet" href="style.css">
+    <title>To do list by elina</title>
     <script src="https://kit.fontawesome.com/45a9076e0e.js" crossorigin="anonymous"></script>
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="app">
-    <header>
-        <div class="title">Todo List</div>
+<section class="container">
+    <header class="header">To do list
+    <button class="resetBtn">
+        <i class="fas fa-redo-alt"></i>
+    </button>
     </header>
-    <ul>
-        <li><button><i class="fas fa-trash-alt"></i>trashBtn</button></li>
+    <ul class="items">
 
     </ul>
-
-    <input type="text">
-
-    <footer>
-        <button>
-            <i class="fas fa-plus-circle"></i>
-            plusBtn</button>
+    <input type="text" class="footer__text" placeholder="Input some text...">
+    <footer class="footer">
+        <button class="plusBtn">
+            <i class="fas fa-plus"></i>
+        </button>
     </footer>
-</div>
-
+</section>
 </body>
 </html>
