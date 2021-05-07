@@ -34,6 +34,9 @@
   const ul = document.querySelector('ul');
   ul.addEventListener('click', event => {
     if (event.target.tagName == 'LI') {
+      //HTML 문서에 설계된 DOM 구조에서 가져온 요소는
+      // 항시 대소문자로만 이루어진 값을 가져오게 된다.
+      // 예를 들면, <div> 객체로 생성한 요소의 tagName  값은 "DIV"가 된다.
       event.target.classList.add('selected');
     }
   });
