@@ -40,8 +40,11 @@ surprise(divide);
 
 // false = 0, -0, '', null, undefine
 // true = -1, 'string', empty array
-if ([]) {
+let num;
+if (num) {
     console.log('true!');
 } else {
     console.log('false!');
 }
+//num의 값이 없어서 false, 뒤에 오는 console.log(num) 실행되지 않음
+num && console.log(num);
