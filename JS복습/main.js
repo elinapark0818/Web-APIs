@@ -74,16 +74,17 @@ function alertNum(num) {
     alert(`alert! 5배수! ${num}`)
 }
 
-const coolCounter = new Counter();
+const printCounter = new Counter(printSomething);
+const alertCounter = new Counter(alertNum);
 
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
+printCounter.increase()
+printCounter.increase()
+printCounter.increase()
+printCounter.increase()
+printCounter.increase()
 
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
+alertCounter.increase()
+alertCounter.increase()
+alertCounter.increase()
+alertCounter.increase()
+alertCounter.increase()
