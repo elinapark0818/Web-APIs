@@ -60,16 +60,22 @@ class Counter {
         this.counter++;
         console.log(this.counter);
         if (this.counter % 5 === 0) {
-            runIf5Times();
+            runIf5Times(this.counter);
         }
     }
 }
 
 const coolCounter = new Counter();
 
-function printSomething() {
-    console.log('5배수입니다!!!')
+function printSomething(num) {
+    console.log(`5배수!!! = ${num}`)
 }
+
+coolCounter.increase(printSomething);
+coolCounter.increase(printSomething);
+coolCounter.increase(printSomething);
+coolCounter.increase(printSomething);
+coolCounter.increase(printSomething);
 
 coolCounter.increase(printSomething);
 coolCounter.increase(printSomething);
