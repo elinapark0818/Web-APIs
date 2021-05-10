@@ -26,9 +26,13 @@ const result2 = add(1, 9);
 console.log(result2)
 
 
+//함수의 이름을 전달하는 것은 함수가 가리키는 reference를 복사해서 전달하는 것이다
+function divide(num1,num2) {
+    return num1 / num2;
+}
 function surprise(operator) {
-    const rst = operator(14,18);
+    const rst = operator(18,6); //add(18, 6)  , divide(18, 6)
     console.log(rst);
 }
-
 surprise(add);
+surprise(divide);
