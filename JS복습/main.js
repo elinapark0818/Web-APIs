@@ -40,11 +40,9 @@ surprise(divide);
 
 // false = 0, -0, '', null, undefine
 // true = -1, 'string', empty array
-let num; // undefine
-if (num) {
-    console.log('true!');
-} else {
-    console.log('false!');
+let obj;
+if (obj) {
+    console.log('obj');
 }
-//num의 값이 없어서(undefine) false, 뒤에 오는 console.log(num) 실행안됨
-num && console.log(num);
+// obj 가 없어서 아무것도 출력되지 않는다
+obj && console.log(obj.name);
