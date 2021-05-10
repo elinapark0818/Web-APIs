@@ -36,3 +36,12 @@ function surprise(operator) {
 }
 surprise(add);
 surprise(divide);
+
+
+// false = 0, -0, '', null, undefine
+// true = -1, 'string', empty array
+if ([]) {
+    console.log('true!');
+} else {
+    console.log('false!');
+}
