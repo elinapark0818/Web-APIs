@@ -71,6 +71,10 @@ function printSomething(num) {
     console.log(`5배수!!! = ${num}`)
 }
 
+function alertNum(num) {
+    alert(`5의 배수입니다. ${num}`)
+}
+
 coolCounter.increase(printSomething);
 coolCounter.increase(printSomething);
 coolCounter.increase(printSomething);
@@ -81,4 +85,4 @@ coolCounter.increase(printSomething);
 coolCounter.increase(printSomething);
 coolCounter.increase(printSomething);
 coolCounter.increase(printSomething);
-coolCounter.increase(printSomething);
+coolCounter.increase(alertNum);
