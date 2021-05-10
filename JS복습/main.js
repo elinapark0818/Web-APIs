@@ -52,37 +52,38 @@ obj && console.log(obj.name);
 console.log('------------------')
 
 class Counter {
-    constructor() {
+    constructor(runEveryFiveTimes) {
         this.counter = 0;
+        this.callback = runEveryFiveTimes;
     }
 
-    increase(runIf5Times) {
+    increase() {
         this.counter++;
         console.log(this.counter);
         if (this.counter % 5 === 0) {
-            runIf5Times(this.counter);
+            this.callback(this.counter);
         }
     }
 }
-
-const coolCounter = new Counter();
 
 function printSomething(num) {
     console.log(`5배수!!! = ${num}`)
 }
 
 function alertNum(num) {
-    alert(`5의 배수입니다. ${num}`)
+    alert(`alert! 5배수! ${num}`)
 }
 
-coolCounter.increase(printSomething);
-coolCounter.increase(printSomething);
-coolCounter.increase(printSomething);
-coolCounter.increase(printSomething);
-coolCounter.increase(printSomething);
+const coolCounter = new Counter(alertNum);
 
-coolCounter.increase(printSomething);
-coolCounter.increase(printSomething);
-coolCounter.increase(printSomething);
-coolCounter.increase(printSomething);
-coolCounter.increase(alertNum);
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
