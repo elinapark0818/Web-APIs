@@ -24,3 +24,11 @@ const result = doSomething(2, 3);
 console.log(result)
 const result2 = add(1, 9);
 console.log(result2)
+
+
+function surprise(operator) {
+    const rst = operator(14,18);
+    console.log(rst);
+}
+
+surprise(add);
