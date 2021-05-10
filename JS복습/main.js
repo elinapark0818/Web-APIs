@@ -41,10 +41,34 @@ surprise(divide);
 // false = 0, -0, '', null, undefine
 // true = -1, 'string', empty array
 let obj = {
-    name: 'elina'
+    name: 'elina',
 };
 if (obj) {
     console.log('obj');
 }
 
 obj && console.log(obj.name);
+
+console.log('------------------')
+
+class Counter {
+    constructor() {
+        this.counter = 0;
+    }
+
+    increase() {
+        this.counter++;
+        console.log(this.counter);
+        if (this.counter % 5 === 0) {
+            console.log('5배수 입니다!')
+        }
+    }
+}
+
+
+const coolCounter = new Counter();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
