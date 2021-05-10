@@ -74,7 +74,7 @@ function alertNum(num) {
     alert(`alert! 5배수! ${num}`)
 }
 
-const coolCounter = new Counter(alertNum);
+const coolCounter = new Counter(); // undefined 여서 TypeError 발생한다
 
 coolCounter.increase();
 coolCounter.increase();
