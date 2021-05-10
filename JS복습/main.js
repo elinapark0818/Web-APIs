@@ -1,3 +1,5 @@
+//함수의 이름을 전달하는 것은 함수가 가리키는 reference를 복사해서 전달하는 것이다
+
 function add(num1, num2) {
     return num1 + num2;
 }
