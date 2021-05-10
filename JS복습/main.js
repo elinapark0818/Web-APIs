@@ -40,9 +40,11 @@ surprise(divide);
 
 // false = 0, -0, '', null, undefine
 // true = -1, 'string', empty array
-let obj;
+let obj = {
+    name: 'elina'
+};
 if (obj) {
     console.log('obj');
 }
-// obj 가 없어서 아무것도 출력되지 않는다
+
 obj && console.log(obj.name);
