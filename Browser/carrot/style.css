@@ -20,3 +20,18 @@ body {
     background-size: cover;
     border-radius: 10px;
 }
+
+header {
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    box-sizing: border-box;
+    background: salmon;
+
+}
