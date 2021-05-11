@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', serif;
+    font-weight: bold;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container {
+    list-style: none;
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    background-image: url("img/background.png");
+    background-size: cover;
+    border-radius: 10px;
+}
