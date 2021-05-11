@@ -13,8 +13,8 @@ body {
 
 .container {
     list-style: none;
-    width: 1000px;
-    height: 500px;
+    width: 1500px;
+    height: 800px;
     margin: auto;
     background-image: url("img/background.png");
     background-size: cover;
