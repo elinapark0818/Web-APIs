@@ -11,23 +11,46 @@ body {
     text-align: center;
 }
 
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
 .game {
-    list-style: none;
+    background: url("img/background.png") center/cover;
+    display: flex;
+    flex-direction: column;
     width: 1500px;
     height: 800px;
-    margin: auto;
-    background-image: url("img/background.png");
-    background-size: cover;
     border-radius: 10px;
 }
 
-header {
+.game__header {
     display: flex;
-    height: 50%;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+.game__btn {
+    width: 60px;
+    height: 60px;
+    background-color: wheat;
+    border: 4px solid black;
+    border-radius: 5px;
+    font-size: 24px;
+    transition: transform 300ms ease-in;
+}
+
+.game__btn:hover {
+    transform: scale(1.1);
+}
+
+.game__field {
+    background-color: blue;
+    width: 100%;
+    height: 100%;
 }
 
 .pop-up {
