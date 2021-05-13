@@ -47,6 +47,14 @@ button {
     transform: scale(1.1);
 }
 
+.game__timer {
+    width: 100px;
+}
+
+.game__score {
+
+}
+
 .game__field {
     background-color: blue;
     width: 100%;
