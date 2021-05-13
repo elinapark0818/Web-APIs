@@ -11,7 +11,7 @@ body {
     text-align: center;
 }
 
-.container {
+.game {
     list-style: none;
     width: 1500px;
     height: 800px;
@@ -30,8 +30,6 @@ header {
     align-items: center;
 }
 
-.timer {
-    box-sizing: border-box;
-    background: salmon;
-
+.pop-up {
+    display: none;
 }
