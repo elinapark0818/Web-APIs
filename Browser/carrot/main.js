@@ -5,10 +5,11 @@ const gameBtn = document.querySelector('.game__btn');
 function changeBtn() {
     document.querySelector('.fa-play').className = "fas fa-stop";
 }
-
-const gameScore = document.querySelector('.game__score');
 const gameTimer = document.querySelector('.game__timer');
 const gameField = document.querySelector('.game__field');
+
+const gameScore = document.querySelector('.game__score');
+
 const refreshBtn = document.querySelector('.pop-up__refresh');
 const gameMessage = document.querySelector('.pop-up__message');
 
