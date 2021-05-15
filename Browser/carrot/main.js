@@ -38,7 +38,7 @@ function timer(sec) {
     let timerId = setInterval(() => {
         gameTimer.innerText = `0: ${sec}`
         if (sec <= 0) {
-            bgm.pause();
+            bgSound.pause();
             clearInterval(timerId);
             return;
         }
