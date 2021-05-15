@@ -73,10 +73,26 @@ button {
 }
 
 .game__field {
+    border-radius: 20px;
     width: 100%;
     height: 100%;
     margin-top: 40px;
-    opacity: 0.4;
+    /*opacity: 0.4;*/
+}
+
+.items {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.items > img {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
 }
 
 .pop-up {
