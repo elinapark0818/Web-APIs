@@ -1,11 +1,22 @@
 'use strict';
 
 const gameBtn = document.querySelector('.game__btn');
-
+const gameTimer = document.querySelector('.game__timer');
 function changeBtn() {
     document.querySelector('.fa-play').className = "fas fa-stop";
 }
-const gameTimer = document.querySelector('.game__timer');
+
+const images = new Image(50,50);
+images.src = "img/bug.png";
+document.querySelector('.game__field').appendChild(images)
+
+
+function Random() {
+    const random = Math.floor(Math.random() * images.length) + 1;
+    return random
+}
+
+
 const gameField = document.querySelector('.game__field');
 
 const gameScore = document.querySelector('.game__score');
@@ -28,4 +39,5 @@ function timer(sec) {
 gameBtn.addEventListener('click', () => {
     changeBtn()
     timer(9)
+    Random()
 })
