@@ -6,16 +6,13 @@ function changeBtn() {
     document.querySelector('.fa-play').className = "fas fa-stop";
 }
 
-const images = new Image(50,50);
-images.src = "img/bug.png";
-document.querySelector('.game__field').appendChild(images)
 
 
-function Random() {
-    const random = Math.floor(Math.random() * images.length) + 1;
-    return random
+function createImage() {
+    const images = new Image(50,50);
+    images.src = "img/bug.png";
+    document.querySelector('.game__field').appendChild(images)
 }
-
 
 const gameField = document.querySelector('.game__field');
 
@@ -39,5 +36,5 @@ function timer(sec) {
 gameBtn.addEventListener('click', () => {
     changeBtn()
     timer(9)
-    Random()
+    createImage()
 })
