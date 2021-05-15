@@ -6,18 +6,15 @@ function changeBtn() {
     document.querySelector('.fa-play').className = "fas fa-stop";
 }
 
-
-
 function createImage() {
     const images = new Image(50,50);
     images.src = "img/bug.png";
     document.querySelector('.game__field').appendChild(images)
 }
 
+
 const gameField = document.querySelector('.game__field');
-
 const gameScore = document.querySelector('.game__score');
-
 const refreshBtn = document.querySelector('.pop-up__refresh');
 const gameMessage = document.querySelector('.pop-up__message');
 
