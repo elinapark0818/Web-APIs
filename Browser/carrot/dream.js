@@ -14,6 +14,35 @@ let started = false;
 let score = 0;
 let timer = undefined;
 
+gameBtn.addEventListener('click', () => {
+    // console.log('log'); 확인해나가는 습관
+    if (started) {
+        stopGame();
+    }else {
+        startGame();
+    }
+    started = !started;
+});
+
+function startGame() {
+    initGame();
+    showStopBtn();
+}
+
+function stopGame() {
+
+}
+
+function showStopBtn() {
+    const icon = gameBtn.querySelector('.fa-play');
+    icon.classList.add('fa-stop');
+    icon.classList.remove('fa-play');
+}
+
+
+
+
+
 function initGame() {
 //    벌레와 당근을 생성한 뒤, field 에 추가한다
     console.log(fieldRect);
@@ -42,4 +71,3 @@ function addItem(className, count, imgPath) {
 function randomNumber(min, max) {
     return Math.random() * (max - min) + min;
 }
-initGame();
