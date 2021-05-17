@@ -6,6 +6,13 @@ const BUG_COUNT = 5;
 
 const field = document.querySelector('.game__field');
 const fieldRect = field.getBoundingClientRect();
+const gameBtn = document.querySelector('.game__btn');
+const gameTimer = document.querySelector('.game__timer');
+const gameScore = document.querySelector('.game__score');
+
+let started = false;
+let score = 0;
+let timer = undefined;
 
 function initGame() {
 //    벌레와 당근을 생성한 뒤, field 에 추가한다
