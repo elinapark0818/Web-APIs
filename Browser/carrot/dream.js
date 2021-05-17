@@ -3,6 +3,8 @@
 const CARROT_SIZE = 80;
 const CARROT_COUNT = 5;
 const BUG_COUNT = 5;
+const GAME_DURATION_SEC = 5;
+
 
 const field = document.querySelector('.game__field');
 const fieldRect = field.getBoundingClientRect();
@@ -18,7 +20,7 @@ gameBtn.addEventListener('click', () => {
     // console.log('log'); 확인해나가는 습관
     if (started) {
         stopGame();
-    }else {
+    } else {
         startGame();
     }
     started = !started;
@@ -28,10 +30,10 @@ function startGame() {
     initGame();
     showStopBtn();
     showTimerAndScore();
+    startGameTimer();
 }
 
 function stopGame() {
-
 }
 
 function showStopBtn() {
@@ -45,14 +47,28 @@ function showTimerAndScore() {
     gameScore.style.visibility = 'visible';
 }
 
+function startGameTimer() {
+    let remainingTimeSec = GAME_DURATION_SEC;
+    updateTimerText(remainingTimeSec);
+    timer = setInterval(() => {
+        if (remainingTimeSec <= 0) {
+            clearInterval(timer);
+            return;
+        }
+        updateTimerText(--remainingTimeSec);
+    }, 1000);
+}
 
-
+function updateTimerText(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    gameTimer.innerText = `${minutes}:${seconds}`;
+}
 
 
 function initGame() {
     field.innerHTML = '';
     gameScore.innerText = CARROT_COUNT;
-
 //    벌레와 당근을 생성한 뒤, field 에 추가한다
     console.log(fieldRect);
     addItem('carrot', CARROT_COUNT, 'img/carrot.png');
