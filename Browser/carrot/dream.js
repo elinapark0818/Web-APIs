@@ -50,6 +50,9 @@ function showTimerAndScore() {
 
 
 function initGame() {
+    field.innerHTML = '';
+    gameScore.innerText = CARROT_COUNT;
+
 //    벌레와 당근을 생성한 뒤, field 에 추가한다
     console.log(fieldRect);
     addItem('carrot', CARROT_COUNT, 'img/carrot.png');
