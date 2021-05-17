@@ -27,6 +27,7 @@ gameBtn.addEventListener('click', () => {
 function startGame() {
     initGame();
     showStopBtn();
+    showTimerAndScore();
 }
 
 function stopGame() {
@@ -37,6 +38,11 @@ function showStopBtn() {
     const icon = gameBtn.querySelector('.fa-play');
     icon.classList.add('fa-stop');
     icon.classList.remove('fa-play');
+}
+
+function showTimerAndScore() {
+    gameTimer.style.visibility = 'visible';
+    gameScore.style.visibility = 'visible';
 }
 
 
