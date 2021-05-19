@@ -12,6 +12,11 @@ const gameBtn = document.querySelector('.game__btn');
 const gameTimer = document.querySelector('.game__timer');
 const gameScore = document.querySelector('.game__score');
 
+const popUp = document.querySelector('.pop-up');
+const popUpMessage = document.querySelector('.pop-up__message');
+const popUpRefrexh = document.querySelector('.pop-up__refresh');
+
+
 let started = false;
 let score = 0;
 let timer = undefined;
@@ -77,6 +82,10 @@ function updateTimerText(time) {
     gameTimer.innerText = `${minutes}:${seconds}`;
 }
 
+function showPopUpWithText(text) {
+    popUpMessage.innerText = text;
+    popUp.classList.remove('pop-up--hide');
+}
 
 function initGame() {
     field.innerHTML = '';
