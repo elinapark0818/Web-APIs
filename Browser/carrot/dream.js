@@ -65,6 +65,7 @@ function startGameTimer() {
     timer = setInterval(() => {
         if (remainingTimeSec <= 0) {
             clearInterval(timer);
+            finishGame(CARROT_COUNT === score);
             return;
         }
         updateTimerText(--remainingTimeSec);
