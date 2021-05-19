@@ -80,6 +80,7 @@ function showStopBtn() {
     const icon = gameBtn.querySelector('.fas');
     icon.classList.add('fa-stop');
     icon.classList.remove('fa-play');
+    gameTimer.style.visibility = 'visible';
 }
 
 function hideGameBtn() {
