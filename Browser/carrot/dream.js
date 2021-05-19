@@ -16,10 +16,12 @@ const popUp = document.querySelector('.pop-up');
 const popUpMessage = document.querySelector('.pop-up__message');
 const popUpRefrexh = document.querySelector('.pop-up__refresh');
 
-
 let started = false;
 let score = 0;
 let timer = undefined;
+
+// field.addEventListener('click', (event) => onFieldClick(event));
+field.addEventListener('click', onFieldClick);
 
 gameBtn.addEventListener('click', () => {
     // console.log('log'); 확인해나가는 습관
@@ -95,6 +97,23 @@ function initGame() {
     addItem('carrot', CARROT_COUNT, 'img/carrot.png');
     addItem('bug', BUG_COUNT, 'img/bug.png');
 }
+
+function onFieldClick(event) {
+    if (!started) {
+        return;
+    }
+    // console.log(event);
+    const target = event.target;
+    if (target.matches('.carrot')) {
+    //    당근!
+        target.remove();
+        score++;
+
+    } else if(target.matches('.bug')) {
+    //    벌레!
+    }
+}
+
 
 function addItem(className, count, imgPath) {
     const x1 = 0;
