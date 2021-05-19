@@ -30,10 +30,17 @@ gameBtn.addEventListener('click', () => {
     } else {
         startGame();
     }
-    started = !started;
+
+});
+
+popUpRefrexh.addEventListener('click', () => {
+    startGame();
 });
 
 function startGame() {
+
+    started = true;
+
     initGame();
     showStopBtn();
     showTimerAndScore();
