@@ -110,7 +110,7 @@ function onFieldClick(event) {
         target.remove();
         score++;
         updateScoreBoard();
-        if (score == CARROT_COUNT) {
+        if (score === CARROT_COUNT) {
             finishGame(true);
         }
     } else if(target.matches('.bug')) {
