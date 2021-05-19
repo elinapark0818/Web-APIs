@@ -43,6 +43,10 @@ function showStopBtn() {
     icon.classList.remove('fa-play');
 }
 
+function hideGameBtn() {
+    gameBtn.style.visibility = 'visible';
+}
+
 function showTimerAndScore() {
     gameTimer.style.visibility = 'visible';
     gameScore.style.visibility = 'visible';
@@ -62,6 +66,8 @@ function startGameTimer() {
 
 function stopGameTimer() {
     clearInterval(timer);
+    hideGameBtn();
+    showPopUpWithText('REPLAY❓');
 }
 
 
