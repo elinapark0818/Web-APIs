@@ -109,9 +109,20 @@ function onFieldClick(event) {
         target.remove();
         score++;
         updateScoreBoard();
+        if (score == CARROT_COUNT) {
+            finishGame(true);
+        }
     } else if(target.matches('.bug')) {
     //    벌레!
+        stopGameTimer();
+        finishGame(false);
     }
+}
+
+function finishGame(win) {
+    started = false;
+    hideGameBtn();
+    showPopUpWithText(win? 'YOU WON 🎉' : 'YOU LOST 💩')
 }
 
 function updateScoreBoard() {
