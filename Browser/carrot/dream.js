@@ -34,6 +34,7 @@ function startGame() {
 }
 
 function stopGame() {
+    stopGameTimer();
 }
 
 function showStopBtn() {
@@ -58,6 +59,11 @@ function startGameTimer() {
         updateTimerText(--remainingTimeSec);
     }, 1000);
 }
+
+function stopGameTimer() {
+    clearInterval(timer);
+}
+
 
 function updateTimerText(time) {
     const minutes = Math.floor(time / 60);
