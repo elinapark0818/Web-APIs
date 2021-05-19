@@ -30,17 +30,15 @@ gameBtn.addEventListener('click', () => {
     } else {
         startGame();
     }
-
 });
 
 popUpRefrexh.addEventListener('click', () => {
     startGame();
+    hidePopUp();
 });
 
 function startGame() {
-
     started = true;
-
     initGame();
     showStopBtn();
     showTimerAndScore();
@@ -48,11 +46,21 @@ function startGame() {
 }
 
 function stopGame() {
+    started = false;
     stopGameTimer();
+    hideGameBtn();
+    showPopUpWithText('REPLAY❓');
 }
 
+function finishGame(win) {
+    started = false;
+    hideGameBtn();
+    showPopUpWithText(win? 'YOU WON 🎉' : 'YOU LOST 💩')
+}
+
+
 function showStopBtn() {
-    const icon = gameBtn.querySelector('.fa-play');
+    const icon = gameBtn.querySelector('.fas');
     icon.classList.add('fa-stop');
     icon.classList.remove('fa-play');
 }
@@ -81,8 +89,6 @@ function startGameTimer() {
 
 function stopGameTimer() {
     clearInterval(timer);
-    hideGameBtn();
-    showPopUpWithText('REPLAY❓');
 }
 
 
@@ -95,6 +101,10 @@ function updateTimerText(time) {
 function showPopUpWithText(text) {
     popUpMessage.innerText = text;
     popUp.classList.remove('pop-up--hide');
+}
+
+function hidePopUp() {
+    popUp.classList.add('pop-up--hide');
 }
 
 function initGame() {
@@ -127,11 +137,7 @@ function onFieldClick(event) {
     }
 }
 
-function finishGame(win) {
-    started = false;
-    hideGameBtn();
-    showPopUpWithText(win? 'YOU WON 🎉' : 'YOU LOST 💩')
-}
+
 
 function updateScoreBoard() {
     gameScore.innerText = CARROT_COUNT - score;
