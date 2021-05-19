@@ -108,12 +108,15 @@ function onFieldClick(event) {
     //    당근!
         target.remove();
         score++;
-
+        updateScoreBoard();
     } else if(target.matches('.bug')) {
     //    벌레!
     }
 }
 
+function updateScoreBoard() {
+    gameScore.innerText = CARROT_COUNT - score;
+}
 
 function addItem(className, count, imgPath) {
     const x1 = 0;
