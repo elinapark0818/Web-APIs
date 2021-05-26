@@ -41,7 +41,7 @@ gameBtn.addEventListener('click', () => {
 
 popUpRefresh.addEventListener('click', () => {
     startGame();
-    hidePopUp();
+
 });
 
 function startGame() {
@@ -121,9 +121,7 @@ function showPopUpWithText(text) {
     popUp.classList.remove('pop-up--hide');
 }
 
-function hidePopUp() {
-    popUp.classList.add('pop-up--hide');
-}
+
 
 function initGame() {
     score = 0;
