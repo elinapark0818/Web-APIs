@@ -14,7 +14,7 @@ const gameScore = document.querySelector('.game__score');
 
 const popUp = document.querySelector('.pop-up');
 const popUpMessage = document.querySelector('.pop-up__message');
-const popUpRefrexh = document.querySelector('.pop-up__refresh');
+const popUpRefresh = document.querySelector('.pop-up__refresh');
 
 const carrotSound = new Audio('./sound/carrot_pull.mp3');
 const alertSound = new Audio('./sound/alert.wav');
@@ -39,7 +39,7 @@ gameBtn.addEventListener('click', () => {
     }
 });
 
-popUpRefrexh.addEventListener('click', () => {
+popUpRefresh.addEventListener('click', () => {
     startGame();
     hidePopUp();
 });
