@@ -1,5 +1,7 @@
 'use strict';
 
+import PopUp from './popup.js';
+
 const CARROT_SIZE = 80;
 const CARROT_COUNT = 5;
 const BUG_COUNT = 5;
@@ -26,6 +28,12 @@ const winSound = new Audio('./sound/game_win.mp3');
 let started = false;
 let score = 0;
 let timer = undefined;
+
+const gameFinishBanner = new PopUp();
+gameFinishBanner.setClickListener(() => {
+    startGame();
+});
+
 
 // field.addEventListener('click', (event) => onFieldClick(event));
 field.addEventListener('click', onFieldClick);
