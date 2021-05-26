@@ -2,10 +2,9 @@
 
 class PopUp {
     constructor() {
-
-        const popUp = document.querySelector('.pop-up');
-        const popUpMessage = document.querySelector('.pop-up__message');
-        const popUpRefresh = document.querySelector('.pop-up__refresh');
+        this.popUp = document.querySelector('.pop-up');
+        this.popUpMessage = document.querySelector('.pop-up__message');
+        this.popUpRefresh = document.querySelector('.pop-up__refresh');
 
     }
 }
