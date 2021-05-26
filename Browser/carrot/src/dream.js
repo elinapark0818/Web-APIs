@@ -116,10 +116,7 @@ function updateTimerText(time) {
     gameTimer.innerText = `${minutes}:${seconds}`;
 }
 
-function showPopUpWithText(text) {
-    popUpMessage.innerText = text;
-    popUp.classList.remove('pop-up--hide');
-}
+
 
 
 
