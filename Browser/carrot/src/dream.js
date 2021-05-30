@@ -152,8 +152,3 @@ function stopSound(sound) {
 function updateScoreBoard() {
     gameScore.innerText = CARROT_COUNT - score;
 }
-
-
-function randomNumber(min, max) {
-    return Math.random() * (max - min) + min;
-}
