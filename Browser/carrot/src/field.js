@@ -10,12 +10,14 @@ export default class Field {
     }
 
     init() {
-        field.innerHTML = '';
-        addItem('carrot', CARROT_COUNT, 'img/carrot.png');
-        addItem('bug', BUG_COUNT, 'img/bug.png');
+        this.field.innerHTML = '';
+        this._addItem('carrot', CARROT_COUNT, 'img/carrot.png');
+        this._addItem('bug', BUG_COUNT, 'img/bug.png');
     }
 
-    addItem(className, count, imgPath) {
+
+
+    _addItem(className, count, imgPath) {
         const x1 = 0;
         const y1 = 0;
         const x2 = fieldRect.width - CARROT_SIZE;
