@@ -51,7 +51,6 @@ export default class Field {
             this.onItemClick && this.onItemClick('carrot');
         } else if (target.matches('.bug')) {
             this.onItemClick && this.onItemClick('bug');
-
         }
     }
 }
