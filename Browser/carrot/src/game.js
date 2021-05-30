@@ -1,7 +1,7 @@
 'use strict';
 
 import * as sound from './sound.js';
-import Field from "./field";
+import Field from "./field.js";
 
 
 // Builder Pattern
@@ -36,10 +36,9 @@ class Game {
         this.carrotCount = carrotCount;
         this.bugCount = bugCount;
 
-        this.gameBtn = document.querySelector('.game__btn');
         this.gameTimer = document.querySelector('.game__timer');
         this.gameScore = document.querySelector('.game__score');
-
+        this.gameBtn = document.querySelector('.game__btn');
         this.gameBtn.addEventListener('click', () => {
             if (this.started) {
                 this.stop();
@@ -58,7 +57,7 @@ class Game {
 
     setGameStopListener(onGameStop) {
         this.onGameStop = onGameStop;
-    }
+    };
 
     start() {
         this.started = true;
@@ -67,7 +66,7 @@ class Game {
         this.showTimerAndScore();
         this.startGameTimer();
         sound.playBackground();
-    }
+    };
 
     stop() {
         this.started = false;
@@ -76,7 +75,7 @@ class Game {
         sound.playAlert();
         sound.stopBackground();
         this.onGameStop && this.onGameStop('cancel');
-    }
+    };
 
     finish(win) {
         this.started = false;
@@ -89,7 +88,7 @@ class Game {
         this.stopGameTimer();
         sound.stopBackground();
         this.onGameStop && this.onGameStop(win ? 'win' : 'lose');
-    }
+    };
 
 
     onItemClick = (item) => {
@@ -113,21 +112,21 @@ class Game {
         icon.classList.add('fa-stop');
         icon.classList.remove('fa-play');
         this.gameBtn.style.visibility = 'visible';
-    }
+    };
 
     hideGameBtn() {
         this.gameBtn.style.visibility = 'hidden';
-    }
+    };
 
     showTimerAndScore() {
         this.gameTimer.style.visibility = 'visible';
         this.gameScore.style.visibility = 'visible';
-    }
+    };
 
     startGameTimer() {
         let remainingTimeSec = this.gameDuration;
         this.updateTimerText(remainingTimeSec);
-        timer = setInterval(() => {
+        this.timer = setInterval(() => {
             if (remainingTimeSec <= 0) {
                 clearInterval(this.timer);
                 this.finish(this.carrotCount === this.score);
@@ -135,11 +134,11 @@ class Game {
             }
             this.updateTimerText(--remainingTimeSec);
         }, 1000);
-    }
+    };
 
     stopGameTimer() {
         clearInterval(this.timer);
-    }
+    };
 
 
     updateTimerText(time) {
@@ -152,9 +151,9 @@ class Game {
         this.score = 0;
         this.gameScore.innerText = this.carrotCount;
         this.gameField.init();
-    }
+    };
 
     updateScoreBoard() {
         this.gameScore.innerText = this.carrotCount - this.score;
-    }
+    };
 }
