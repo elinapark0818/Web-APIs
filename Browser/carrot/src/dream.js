@@ -1,15 +1,13 @@
 'use strict';
 
 import PopUp from './popup.js';
+import Field from './field.js';
 
-const CARROT_SIZE = 80;
+
 const CARROT_COUNT = 5;
 const BUG_COUNT = 5;
 const GAME_DURATION_SEC = 5;
 
-
-const field = document.querySelector('.game__field');
-const fieldRect = field.getBoundingClientRect();
 
 
 const gameBtn = document.querySelector('.game__btn');
@@ -33,9 +31,25 @@ gameFinishBanner.setClickListener(() => {
     startGame();
 });
 
+const gameField = new Field(CARROT_COUNT, BUG_COUNT);
+gameField.setClickListener(onItemClick);
 
-// field.addEventListener('click', (event) => onFieldClick(event));
-field.addEventListener('click', onFieldClick);
+
+function onItemClick(event) {
+    if (!started) {
+        return;
+    }
+    if (item === 'carrot') {
+        score++;
+        updateScoreBoard();
+        if (score === CARROT_COUNT) {
+            finishGame(true);
+        }
+    } else if (item === 'bug') {
+        finishGame(false);
+    }
+}
+
 
 gameBtn.addEventListener('click', () => {
     // console.log('log'); 확인해나가는 습관
@@ -119,40 +133,12 @@ function updateTimerText(time) {
     gameTimer.innerText = `${minutes}:${seconds}`;
 }
 
-
-
-
-
 function initGame() {
     score = 0;
-    field.innerHTML = '';
     gameScore.innerText = CARROT_COUNT;
-//    벌레와 당근을 생성한 뒤, field 에 추가한다
-    console.log(fieldRect);
-    addItem('carrot', CARROT_COUNT, 'img/carrot.png');
-    addItem('bug', BUG_COUNT, 'img/bug.png');
+    gameField.init();
 }
 
-function onFieldClick(event) {
-    if (!started) {
-        return;
-    }
-    // console.log(event);
-    const target = event.target;
-    if (target.matches('.carrot')) {
-        //    당근!
-        target.remove();
-        score++;
-        playSound(carrotSound);
-        updateScoreBoard();
-        if (score === CARROT_COUNT) {
-            finishGame(true);
-        }
-    } else if (target.matches('.bug')) {
-        //    벌레!
-        finishGame(false);
-    }
-}
 
 function playSound(sound) {
     sound.currentTime = 0;
@@ -167,23 +153,6 @@ function updateScoreBoard() {
     gameScore.innerText = CARROT_COUNT - score;
 }
 
-function addItem(className, count, imgPath) {
-    const x1 = 0;
-    const y1 = 0;
-    const x2 = fieldRect.width - CARROT_SIZE;
-    const y2 = fieldRect.height - CARROT_SIZE;
-    for (let i = 0; i < count; i++) {
-        const item = document.createElement('img');
-        item.setAttribute('class', className);
-        item.setAttribute('src', imgPath);
-        item.style.position = 'absolute';
-        const x = randomNumber(x1, x2);
-        const y = randomNumber(y1, y2);
-        item.style.left = `${x}px`;
-        item.style.top = `${y}px`;
-        field.appendChild(item);
-    }
-}
 
 function randomNumber(min, max) {
     return Math.random() * (max - min) + min;
