@@ -46,9 +46,11 @@ export default class Field {
     onClick = (event) => {
         const target = event.target;
         if (target.matches('.carrot')) {
+            if (this.onItemClick && this.onItemClick('carrot')) {
+                return
+            }
             target.remove();
             sound.playCarrot();
-            this.onItemClick && this.onItemClick('carrot');
         } else if (target.matches('.bug')) {
             this.onItemClick && this.onItemClick('bug');
         }
