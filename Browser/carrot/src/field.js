@@ -16,6 +16,9 @@ export default class Field {
     }
 
 
+    setClickListener(onItemClick) {
+        this.onItemClick = onItemClick;
+    }
 
     _addItem(className, count, imgPath) {
         const x1 = 0;
@@ -36,6 +39,13 @@ export default class Field {
     }
 
     onClick(event) {
-
+        const target = event.target;
+        if (target.matches('.carrot')) {
+            target.remove();
+            playSound(carrotSound);
+            this.onItemClick && this.onItemClick('carrot');
+        } else if (target.matches('.bug')) {
+            this.onItemClick && this.onItemClick('bug');
+        }
     }
 }
