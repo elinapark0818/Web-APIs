@@ -31,11 +31,6 @@ export function playWin() {
 }
 
 
-function playSound(sound) {
-    sound.currentTime = 0;
-    sound.play();
-}
-
 function stopSound(sound) {
     sound.pause();
 }

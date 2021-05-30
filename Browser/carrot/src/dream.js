@@ -59,7 +59,7 @@ function startGame() {
     showStopBtn();
     showTimerAndScore();
     startGameTimer();
-    playSound(bgSound)
+    sound.playBackground();
 }
 
 function stopGame() {
@@ -67,20 +67,20 @@ function stopGame() {
     stopGameTimer();
     hideGameBtn();
     gameFinishBanner.showWithText('REPLAY❓');
-    playSound(alertSound);
-    stopSound(bgSound);
+    sound.playAlert();
+    sound.stopBackground();
 }
 
 function finishGame(win) {
     started = false;
     hideGameBtn();
     if (win) {
-        playSound(winSound);
+        sound.playWin();
     } else {
-        playSound(bugSound);
+        sound.playBug();
     }
     stopGameTimer();
-    stopSound(bgSound);
+    sound.stopBackground();
     gameFinishBanner.showWithText(win ? 'YOU WON 🎉' : 'YOU LOST 💩');
 }
 
