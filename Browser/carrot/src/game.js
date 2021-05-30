@@ -7,7 +7,7 @@ export default class Game {
     constructor(gameDuration, carrotCount, bugCount) {
         this.gameDuration = gameDuration;
         this.carrotCount = carrotCount;
-        this.bugCount = bugCount;
+        // this.bugCount = bugCount;
 
         this.gameBtn = document.querySelector('.game__btn');
         this.gameTimer = document.querySelector('.game__timer');
@@ -89,7 +89,7 @@ export default class Game {
     }
 
     hideGameBtn() {
-        this.gameBtn.style.visibility = 'visible';
+        this.gameBtn.style.visibility = 'hidden';
     }
 
     showTimerAndScore() {
@@ -127,10 +127,7 @@ export default class Game {
         this.gameField.init();
     }
 
-
     updateScoreBoard() {
         this.gameScore.innerText = this.carrotCount - this.score;
     }
-
-
 }

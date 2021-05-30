@@ -1,10 +1,13 @@
 'use strict';
 
-import PopUp from './popup.js';
-import Game from './game.js';
+import PopUp from "./popup.js";
+import Game from "./game.js";
+
 
 const gameFinishBanner = new PopUp();
+
 const game = new Game(3, 2, 2);
+
 game.setGameStopListener(reason => {
     console.log(reason);
     let message;
@@ -26,4 +29,4 @@ game.setGameStopListener(reason => {
 
 gameFinishBanner.setClickListener(() => {
     game.start();
-})
+});
