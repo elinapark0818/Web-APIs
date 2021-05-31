@@ -3,9 +3,15 @@
 import * as sound from './sound.js';
 import Field from "./field.js";
 
+export const Reason = Object.freeze({
+    win: 'win',
+    lose: 'lose',
+    cancel: 'cancel',
+});
+
 
 // Builder Pattern
-export default class GameBuilder {
+export class GameBuilder {
     withGameDuration(duration) {
         this.gameDuration = duration;
         return this;
@@ -74,7 +80,7 @@ class Game {
         this.hideGameBtn();
         sound.playAlert();
         sound.stopBackground();
-        this.onGameStop && this.onGameStop('cancel');
+        this.onGameStop && this.onGameStop(Reason.cancel);
     };
 
     finish(win) {
@@ -87,7 +93,7 @@ class Game {
         }
         this.stopGameTimer();
         sound.stopBackground();
-        this.onGameStop && this.onGameStop(win ? 'win' : 'lose');
+        this.onGameStop && this.onGameStop(win ? Reason.win : Reason.lose);
     };
 
 
