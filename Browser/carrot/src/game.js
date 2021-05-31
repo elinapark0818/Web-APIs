@@ -3,6 +3,7 @@
 import * as sound from './sound.js';
 import Field from "./field.js";
 
+
 export const Reason = Object.freeze({
     win   : 'win',
     lose  : 'lose',
